@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('backups', [App\Http\Controllers\BackupController::class, 'index'])->name('backup')->middleware('auth');
 Route::get('/add-backup', [App\Http\Controllers\BackupController::class, 'create'])->middleware('auth');
 Route::post('/store-backup', [App\Http\Controllers\BackupController::class, 'store'])->middleware('auth');
+Route::get('/view-backup', [App\Http\Controllers\BackupController::class, 'Branch'])->middleware('auth');

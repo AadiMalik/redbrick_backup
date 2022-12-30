@@ -269,15 +269,14 @@
                                     Setting</a>
                                 <div class="dropdown-divider"></div> --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout
-                                    </a>
+                                    <i class="fa fa-power-off me-1 ms-1"></i> Logout
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                                 <div class="dropdown-divider"></div>
                                 {{-- <div class="ps-4 p-10">
                                     <a href="javascript:void(0)"
@@ -319,6 +318,14 @@
                                 href="{{ url('add-backup') }}" aria-expanded="false"><i
                                     class="mdi mdi-database-plus"></i><span class="hide-menu">Add Backup</span></a>
                         </li>
+                        @if(auth()->user()->part_of == 1)
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="{{ url('view-backup') }}" aria-expanded="false"><i
+                                        class="mdi mdi-database-plus"></i><span class="hide-menu">Branch
+                                        Backups</span></a>
+                            </li>
+                        @endif
                         {{-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html"
                                 aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
