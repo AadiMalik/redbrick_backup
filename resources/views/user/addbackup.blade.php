@@ -39,7 +39,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="image" style="color:#fff;">Backup file</label>
-                                        <input type="file" class="form-control" required="" name="backup">
+                                        <input type="file" class="form-control" required="" name="backup" style="border: 2px solid;">
                                         {!! $errors->first('backup', "<span class='text-danger'>:message</span>") !!}
                                     </div>
                                     <div class="form-group">
